@@ -2,11 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages Site</title>
+  <title>写真とテキストを中央に配置</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* 画面の高さ全体を使う */
+    }
+    .center-container img {
+      max-width: 300px; /* お好みで調整 */
+      height: auto;
+    }
+    .caption {
+      margin-top: 16px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <h1>こんにちは、GitHub Pages!</h1>
-  <p>これは私の最初のGitHub Pagesサイトです。</p>
+  <div class="center-container">
+    <img src="sample.jpg" alt="サンプル画像">
+    <div class="caption">これは写真の下に表示する文字です</div>
+  </div>
 </body>
 </html>
