@@ -34,3 +34,51 @@
   </div>
 </body>
 </html>
+
+<style>
+  .header {
+    width: 100%;
+    background: transparent;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 8px;
+  }
+  .header-button {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid #aaa;
+    border-radius: 18px;
+    padding: 5px 18px;
+    font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .header-button:hover {
+    background: rgba(0,0,0,0.1);
+    color: #000;
+  }
+  body {
+    padding-top: 55px; /* ヘッダー分の余白 */
+  }
+</style>
+
+<!-- ヘッダー本体 -->
+<div class="header">
+  <div>marjesus site</div>
+  <div class="header-buttons">
+    <a class="header-button" href="#home">Home</a>
+    <a class="header-button" href="#about">About</a>
+    <a class="header-button" href="#gallery">Gallery</a>
+    <a class="header-button" href="#contact">Contact</a>
+  </div>
+</div>
