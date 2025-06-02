@@ -101,6 +101,46 @@
     }
     moveText();
   </script>
+  <span id="mouse-coords" style="
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  font-family: monospace;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #ccc;
+  padding: 2px 8px;
+  border-radius: 6px;
+  z-index: 10000;
+  pointer-events: none;
+  user-select: none;
+"></span>
+<script>
+  const coords = document.getElementById('mouse-coords');
+  document.addEventListener('mousemove', function(e) {
+    const x = e.clientX;
+    const y = e.clientY;
+    const z = 0;
+    coords.innerHTML =
+      '<span style="color:red;">X: ' + x + '</span> ' +
+      '<span style="color:green;">Y: ' + y + '</span> ' +
+      '<span style="color:blue;">Z: ' + z + '</span>';
+    const offsetX = 20;
+    const offsetY = 20;
+    let posX = x + offsetX;
+    let posY = y + offsetY;
+
+    // 画面端で隠れないよう調整
+    if (posX + coords.offsetWidth > window.innerWidth) {
+      posX = x - coords.offsetWidth - offsetX;
+    }
+    if (posY + coords.offsetHeight > window.innerHeight) {
+      posY = y - coords.offsetHeight - offsetY;
+    }
+    coords.style.left = posX + 'px';
+    coords.style.top = posY + 'px';
+  });
+</script>
 </body>
 </html>
 </html>
