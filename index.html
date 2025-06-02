@@ -54,4 +54,53 @@
     merchページへ
   </a>
 </body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>バウンドする文字</title>
+  <style>
+    #bouncing-text {
+      position: fixed;
+      left: 0;
+      top: 0;
+      font-size: 32px;
+      color: #ff1493;
+      font-weight: bold;
+      z-index: 9999; /* 非常に高い値で「どの画像よりも上」に表示 */
+      pointer-events: none; /* クリックを通過させる */
+      user-select: none;    /* 選択防止 */
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <!-- ここに画像があってもOK -->
+  <img src="sample.jpg" style="width:300px;">
+  <span id="bouncing-text">バウンドする文字！</span>
+  <script>
+    const text = document.getElementById('bouncing-text');
+    let x = 100, y = 100;
+    let vx = 3, vy = 3; // 対角方向に動く速度
+    function moveText() {
+      const textRect = text.getBoundingClientRect();
+      const winWidth = window.innerWidth;
+      const winHeight = window.innerHeight;
+
+      // 壁にぶつかったときバウンド
+      if (x <= 0 || x + textRect.width >= winWidth) vx *= -1;
+      if (y <= 0 || y + textRect.height >= winHeight) vy *= -1;
+
+      x += vx;
+      y += vy;
+
+      text.style.left = x + 'px';
+      text.style.top = y + 'px';
+
+      requestAnimationFrame(moveText);
+    }
+    moveText();
+  </script>
+</body>
+</html>
 </html>
