@@ -170,7 +170,7 @@ body { background:#fff; color:#000; font-family:monospace; }
 <div id="maze-container">
   <div id="maze-wrapper">
     <canvas id="maze" width="420" height="420" tabindex="0"></canvas>
-    <div id="goal-text">ゴール</div>
+    <div id="goal-text">GOAL</div>
   </div>
   <div id="controls">
     <div>
@@ -178,11 +178,11 @@ body { background:#fff; color:#000; font-family:monospace; }
       <input id="difficulty-bar" type="range" min="0" max="4" value="0" step="1"
         list="difficulty-list">
       <datalist id="difficulty-list">
-        <option value="0" label="とことんかんたん">
-        <option value="1" label="かんたん">
-        <option value="2" label="ふつう">
-        <option value="3" label="むずかしい">
-        <option value="4" label="激むず">
+        <option value="0" label="V EAZY">
+        <option value="1" label="EAZY">
+        <option value="2" label="NORMAL">
+        <option value="3" label="HARD">
+        <option value="4" label="V HARD">
       </datalist>
     </div>
     <div id="dpad">
@@ -196,11 +196,11 @@ body { background:#fff; color:#000; font-family:monospace; }
 </div>
 <script>
 const DIFFS = [
-  { label: "とことんかんたん", size: 7 },
-  { label: "かんたん", size: 11 },
-  { label: "ふつう", size: 17 },
-  { label: "むずかしい", size: 23 },
-  { label: "激むず", size: 33 }
+  { label: "V EAZY", size: 7 },
+  { label: "EAZY", size: 11 },
+  { label: "NORMAL", size: 17 },
+  { label: "HARD", size: 23 },
+  { label: "V HARD", size: 33 }
 ];
 const MAZE_SIZE = 400, WALL = 1, PATH = 0;
 let maze = [], visited = [], player, goal, cellSize, solved = false, trail = [];
